@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account — Khayyat Calcy</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1A1A2E;
+            --accent: #E07B00;
+            --red: #DC3545;
+            --bg: #FAFAF8;
+            --text: #2D2D2D;
+            --text-muted: #6B6B6B;
+            --border: #E8E5E0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: var(--navy);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.95rem;
+        }
+
+        main {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .warning-box {
+            background: #FFF5F5;
+            border: 1px solid #FED7D7;
+            border-left: 3px solid var(--red);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .warning-box h3 {
+            color: var(--red);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .warning-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+        }
+
+        p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 1.5rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+            background: var(--red);
+        }
+
+        .steps {
+            margin: 1.5rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .step-content h4 {
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+
+        .step-content p {
+            font-size: 0.88rem;
+            margin: 0;
+        }
+
+        .cta-card {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-card h3 {
+            font-family: 'Fraunces', serif;
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-card p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-card a {
+            display: inline-block;
+            padding: 0.65rem 2rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .back-link:hover { color: var(--navy); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer span { color: var(--accent); font-weight: 600; }
+
+        @media (max-width: 600px) {
+            header { padding: 2rem 1.2rem; }
+            header h1 { font-size: 1.5rem; }
+            main { padding: 2rem 1.2rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Delete Your Account</h1>
+    <p>Khayyat Calcy — Account & Data Deletion</p>
+</header>
+
+<main>
+
+    <div class="warning-box">
+        <h3>This action is permanent</h3>
+        <p>Once your account is deleted, all your data will be permanently removed and cannot be recovered.</p>
+    </div>
+
+    <h2>What gets deleted</h2>
+    <p>When you request account deletion, the following data will be permanently removed within 30 days:</p>
+    <ul>
+        <li>Your account profile (name, email, photo)</li>
+        <li>All orders and piece tracking data</li>
+        <li>All bills and invoices</li>
+        <li>Company information (name, address, contact)</li>
+        <li>Party/shop records</li>
+        <li>Machine and katwar records</li>
+        <li>Model numbers and rates</li>
+        <li>Device registration data</li>
+        <li>Subscription and billing settings</li>
+    </ul>
+
+    <h2>How to request deletion</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>Contact us on WhatsApp</h4>
+                <p>Send us a message with the email address associated with your Khayyat Calcy account.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>We verify your identity</h4>
+                <p>We'll confirm your account ownership by matching your request with your registered email.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Data is permanently deleted</h4>
+                <p>Your account and all associated data will be deleted from our systems within 30 days.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-card">
+        <h3>Request Account Deletion</h3>
+        <p>Contact us via WhatsApp to begin the process</p>
+        <a href="https://wa.me/+971504047655?text=Hello%2C%20I%20want%20to%20delete%20my%20Khayyat%20Calcy%20account.%20My%20registered%20email%20is%3A%20">Request Deletion on WhatsApp</a>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Privacy Policy</a>
+
+</main>
+
+<footer>
+    &copy; 2026 <span>Khayyat Calcy</span> by IT Khidma. All rights reserved.
+</footer>
+
+</body>
+</html>
